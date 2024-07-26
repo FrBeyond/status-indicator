@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indicateur de Statut</title>
+    <style>
+        /* Styles CSS intégrés */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .status-container {
+            text-align: center;
+        }
+        #status {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .online {
+            color: green;
+        }
+        .offline {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-container">
+        <div id="status" class="offline">Hors ligne</div>
+        <button id="toggleButton">Changer Statut</button>
+    </div>
+
+    <script>
+        // Script JavaScript
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var statusDiv = document.getElementById('status');
+            if (statusDiv.classList.contains('offline')) {
+                statusDiv.classList.remove('offline');
+                statusDiv.classList.add('online');
+                statusDiv.textContent = 'En ligne';
+            } else {
+                statusDiv.classList.remove('online');
+                statusDiv.classList.add('offline');
+                statusDiv.textContent = 'Hors ligne';
+            }
+        });
+    </script>
+</body>
+</html>
